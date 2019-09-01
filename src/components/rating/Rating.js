@@ -26,7 +26,7 @@ Rating.defaultProps = {
     starDimension: "25px",
     starSpacing: "2px",
     starEmptyColor: "#aaa",
-    starRatedColor: "#FA604A"
+    starRatedColor: "#d02b1f"
 };
 
 export default Rating;

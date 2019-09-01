@@ -10,6 +10,7 @@ export const Card = styled.div`
 export const Img = styled(Image)`
     width: 170px;
     height: 260px;
+    display: block;
 `;
 
 export const Rating = styled.div`

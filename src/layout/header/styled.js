@@ -3,14 +3,13 @@ import { NavLink } from "react-router-dom";
 
 export const Container = styled.nav`
     padding: 15px;
-    background-color: #232323;
+    background-color: #1d2f4a;
     color: #fff;
     width: 100%;
 `;
 
 export const Content = styled.div`
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     @media (max-width: 800px) {
         flex-direction: column;
@@ -38,6 +37,7 @@ export const Links = styled.div`
     @media (max-width: 800px) {
         flex-direction: column;
     }
+    margin-left: 100px;
 `;
 
 export const LinkContainer = styled.div`

@@ -14,7 +14,7 @@ export const Additional = styled.div`
         width: 140px;
         box-sizing: border-box;
         margin: 10px;
-        border: 1px solid #ff5717;
+        border: 1px solid #d02b1f;
         background-color: #F0F3F4;
         text-align: center;
         padding: 10px;

@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import Image from 'components/image'
 
 export const ViewContainer = styled.div`
-    background-image: radial-gradient(circle at 20% 50%, rgba(19.61%, 7.84%, 7.84%, 0.94) 0%, rgba(42.35%, 30.98%, 24.71%, 0.94) 100%);
-    background-color: #ff5717;
+    background-color: rgba(33,61,91, 0.9);
     margin-top:30px;
     padding:0;
     width: 100%;
@@ -54,6 +53,8 @@ export const ReleaseDate = styled.span`
 export const Overview = styled.div`
     margin-top: 15px;
     margin-bottom: 30px;
+    max-height: 150px;
+    overflow: auto;
 `;
 
 export const Tagline = styled.div`

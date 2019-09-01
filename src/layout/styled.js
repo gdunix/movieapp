@@ -20,6 +20,10 @@ export const GlobalStyle = createGlobalStyle`
         margin-top: 20px;
         margin-bottom: 10px;
     }
+
+    img {
+        border: 0;
+    }
 `;
 
 export const Content = styled.div`
