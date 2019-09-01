@@ -1,46 +1,47 @@
 import actionTypes from './constants';
 
-const request = (path, method, body) => ({
+const request = ({path, key, method, body}) => ({
     type: actionTypes.API_REQUEST,
     payload: {
         path,
+        key,
         method,
         body
     }
 });
 
-const apiGet = path => request(path, 'GET');
+const apiGet = ({ path, key }) => request({ path, key, method: 'GET' });
 
-const apiPost = (path, body) => request(path, 'POST', body);
+const apiPost = ({ path, key, body }) => request({ path, key, method:'POST', body});
 
-const apiPut = (path, body) => request(path, 'PUT', body);
+const apiPut = ({ path, key, body }) => request({ path, key, method:'PUT', body});
 
-const apiDelete = path => request(path, 'DELETE');
+const apiDelete = ({ path, key }) => request({ path, key, method: 'DELETE' });
 
-const success = (path, data) => ({
+const success = (key, data) => ({
     type: actionTypes.API_RESPONSE,
     payload: {
-        path,
+        key,
         data
     }    
 });
 
-const error = (path, error) => ({
+const error = (key, error) => ({
     type: actionTypes.API_RESPONSE,
     payload: {
-        path,
+        key,
         error
     }   
 });
 
-const clear = path => ({
+const clear = key => ({
     type: actionTypes.API_CLEAR,
     payload: {
-        path
+        key
     }  
 });
 
-const apiClear = path => dispatch => dispatch(clear(path));
+const apiClear = key => dispatch => dispatch(clear(key));
 
 export default {
     apiGet,

@@ -6,7 +6,7 @@ const reducer = (state = {}, action) => {
       case actionTypes.API_REQUEST:
         return {
           ...state,
-          [action.payload.path]: {
+          [action.payload.key]: {
             loading: true,
             error: ''
           }
@@ -14,7 +14,7 @@ const reducer = (state = {}, action) => {
       case actionTypes.API_RESPONSE:
         return {
           ...state,
-          [action.payload.path]: {
+          [action.payload.key]: {
             loading: false,
             data: action.payload.data,
             error: ''
@@ -23,7 +23,7 @@ const reducer = (state = {}, action) => {
       case actionTypes.API_ERROR:
         return {
           ...state,
-          [action.payload.path]: {
+          [action.payload.key]: {
             loading: false,
             error: action.payload.error
           }
@@ -31,7 +31,7 @@ const reducer = (state = {}, action) => {
       case actionTypes.API_CLEAR:
         return {
           ...state,
-          [action.payload]: {
+          [action.payload.key]: {
             loading: false,
             data: null
           }

@@ -8,7 +8,7 @@ const endpoint = config.default.baseURL;
 
 const middleware = ({ dispatch }) => next => action => {
     next(action);
-    
+    console.log(action.payload)
     if (action.type === C.API_REQUEST) {
         const config = {
             url: `${endpoint}${action.payload.path}`,
@@ -18,8 +18,8 @@ const middleware = ({ dispatch }) => next => action => {
 
         axios
             .request(config)
-            .then(response=> dispatch(actions.success(action.payload.path.split('/')[0], response.data)))
-            .catch(response => dispatch(actions.error(action.payload.path, response.error)));
+            .then(response=> dispatch(actions.success(action.payload.key, response.data)))
+            .catch(response => dispatch(actions.error(action.payload.key, response.error)));
     }
 };
 
