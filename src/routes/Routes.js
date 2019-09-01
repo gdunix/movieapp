@@ -10,7 +10,7 @@ const Routes = () => (
     <Router>
         <Layout>
             <Route exact path="/" render={() => <Main />} />
-            <Route path="/movies/:movieId" render={props => <Movie {...props} />} />
+            <Route path="/movie/:movieId" render={props => <Movie {...props} />} />
             <Route exact path="/latest-seen" render={() => <LatestSeen />} />
         </Layout>
     </Router>
