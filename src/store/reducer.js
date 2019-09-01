@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 
+import { reducer as apiReducer } from './middlewares/api';
+
 const rootReducer = (state = {}, action) => {
     switch (action.type) {
      case 'SIMPLE_ACTION':
@@ -12,5 +14,6 @@ const rootReducer = (state = {}, action) => {
    }
 
 export default combineReducers({
-    rootReducer
+    rootReducer,
+    apiReducer
 });

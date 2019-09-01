@@ -1,0 +1,6 @@
+export default {
+    API_REQUEST: 'API_REQUEST',
+    API_RESPONSE: 'API_RESPONSE',
+    API_ERROR: 'API_ERROR',
+    API_CLEAR: 'API_CLEAR'
+};

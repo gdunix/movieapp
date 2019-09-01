@@ -1,0 +1,1 @@
+export { Posters, PostersWithRating } from './Poster.container';

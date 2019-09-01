@@ -1,6 +1,5 @@
 /* eslint-disable */
 const { resolve } = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const limit = 100000;
@@ -75,8 +74,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    'css-loader'
                 ],
             }
         ]
@@ -87,7 +85,9 @@ module.exports = {
             pages: resolve(__dirname, 'src/pages/'),
             components: resolve(__dirname, 'src/components'),
             layout: resolve(__dirname, 'src/layout'),
-            routes: resolve(__dirname, 'src/routes')
+            routes: resolve(__dirname, 'src/routes'),
+            config: resolve(__dirname, 'src/config'),
+            hocs: resolve(__dirname, 'src/hocs'),
         }
     },
     plugins: [
@@ -95,12 +95,6 @@ module.exports = {
             template: './public/index.html',
             filename: 'index.html',
             inject: 'body'
-        }),
-        new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: "[name].css",
-            chunkFilename: "[id].css"
         })
     ]
 };

@@ -4,14 +4,21 @@ export const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;
+        font-family: 'Roboto Slab', serif;
     }
   
     div {
-        display: block;
+        display: block;   
     }
     
     a {
         text-decoration: none;
+    }
+
+    h3 {
+        font-size: 24px;
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
 `;
 
