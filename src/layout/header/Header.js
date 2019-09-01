@@ -9,7 +9,7 @@ const Header = () => (
             </S.Logo>
             <S.Links>
                 <S.LinkContainer>
-                    <S.Link to="/">Home</S.Link>
+                    <S.Link to="/latest-seen">Latest Seen</S.Link>
                 </S.LinkContainer>
             </S.Links>
         </S.Content>    

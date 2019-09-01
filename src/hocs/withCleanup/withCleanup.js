@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 
-const withData = WrappedComponent => props => {
+const withCleanup = WrappedComponent => props => {
     useEffect(() => {
-        props.fetchData();
+        return () => props.cleanup();
     }, []);
 
     return <WrappedComponent {...props} />
 };
 
-export default withData;
+export default withCleanup;

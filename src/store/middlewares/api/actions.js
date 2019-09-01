@@ -18,8 +18,25 @@ const apiPut = ({ path, key, body }) => request({ path, key, method:'PUT', body}
 
 const apiDelete = ({ path, key }) => request({ path, key, method: 'DELETE' });
 
+const aggregatedGet = ({ path, key, size }) => ({
+    type: actionTypes.API_AGGREGATED_GET,
+    payload: {
+        path,
+        key,
+        size,
+    }
+});
+
 const success = (key, data) => ({
     type: actionTypes.API_RESPONSE,
+    payload: {
+        key,
+        data
+    }    
+});
+
+const aggregatedSuccess = (key, data) => ({
+    type: actionTypes.API_AGGREGATED_RESPONSE,
     payload: {
         key,
         data
@@ -48,6 +65,8 @@ export default {
     apiPost,
     apiPut,
     apiDelete,
+    aggregatedGet,
+    aggregatedSuccess,
     success,
     error,
     apiClear
