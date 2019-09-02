@@ -1,19 +1,23 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Layout from 'layout';
+import Loader from 'components/loader';
 import Main from 'pages/main';
-import Movie from 'pages/movie';
-import LatestSeen from 'pages/latestSeen';
-import ByYear from 'pages/byYear';
+
+const Movie = React.lazy(() => import(/* webpackChunkName: "Movie" */'pages/movie'));
+const LatestSeen = React.lazy(() => import(/* webpackChunkName: "LatestSeen" */'pages/latestSeen'));
+const ByYear = React.lazy(() => import(/* webpackChunkName: "ByYear" */'pages/byYear'));
 
 const Routes = () => (
     <Router>
         <Layout>
-            <Route exact path="/" render={() => <Main />} />
-            <Route path="/movie/:movieId" render={props => <Movie {...props} />} />
-            <Route exact path="/latest-seen" render={() => <LatestSeen />} />
-            <Route exact path="/by-year" render={() => <ByYear />} />
+            <Suspense fallback={<Loader />}>
+                <Route exact path="/" render={() => <Main />} />
+                <Route path="/movie/:movieId" render={props => <Movie {...props} />} />
+                <Route exact path="/latest-seen" render={() => <LatestSeen />} />
+                <Route exact path="/by-year" render={() => <ByYear />} />
+            </Suspense>
         </Layout>
     </Router>
 );
