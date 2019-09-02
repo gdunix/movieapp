@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
     padding: 10px;
     border-bottom: 1px solid #1d2f4a;
+    max-height: 120px;
+    overflow: auto;
     display: flex;
     flex-wrap: wrap;
 `;
