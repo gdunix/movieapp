@@ -2,13 +2,15 @@ import React, { Fragment } from 'react';
 
 import * as S from './styled';
 
-const Quotes = ({ comments }) => (
+const Quotes = ({ quotes }) => (
     <Fragment>
-        { comments && <h3>Quotes</h3> }
+        {quotes && !!quotes.length && <h3>Quotes</h3>}
         {
-            <S.Blockquote>
-                <div dangerouslySetInnerHTML={{ __html: comments }} />
-            </S.Blockquote>
+            quotes && quotes.map(({text, index}) => (
+                <S.Blockquote key={text}>
+                    {text}
+                </S.Blockquote>
+            ))
         }
     </Fragment>
 );
