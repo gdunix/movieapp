@@ -4,7 +4,7 @@ import * as S from './styled';
 
 const withTitle = WrappedComponent => ({ title, ...rest }) => (
     <Fragment>
-        <h2>{title}</h2>
+        <S.Title>{title}</S.Title>
         <S.Content>
             <WrappedComponent {...rest} />
         </S.Content>

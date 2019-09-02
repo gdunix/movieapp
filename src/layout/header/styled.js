@@ -17,13 +17,15 @@ export const Content = styled.div`
     }
 `;
 
-export const Logo = styled.div``;
+export const Logo = styled.div`
+    font-family: 'Lobster Two',cursive;
+`;
 
 export const LogoLink = styled.a`
-    font-size: 24px;
+    font-size: 34px;
     font-weight: 600;
     color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    text-shadow: 1px 1px 1px #000;
     line-height: 20px;
     &:hover {
         text-decoration: none;
@@ -38,6 +40,7 @@ export const Links = styled.div`
         flex-direction: column;
     }
     margin-left: 100px;
+    
 `;
 
 export const LinkContainer = styled.div`
@@ -49,7 +52,8 @@ export const Link = styled(NavLink)`
     fill: #fff;
     transition: .2s;
     text-decoration: none;
-    font-size: 16px;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 18px;
     font-weight: 400;
     &:hover {
         text-decoration: none;

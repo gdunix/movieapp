@@ -15,6 +15,7 @@ export const Year = styled.a`
     font-family: 'Slabo 27px',serif;
     font-size: 2.4em;
     line-height: 1.1em;
+    text-shadow: 0.5px 0.5px 0.5px #000;
     color: ${props => (props.selected ? '#d02b1f' :  '#1d2f4a')};
 
     &:hover {
