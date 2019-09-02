@@ -16,7 +16,7 @@ const MainInfo = ({ title, imageURL, release_date, grade, overview, director, ta
                     <span>{title}</span>
                     <S.ReleaseDate>({release_date})</S.ReleaseDate>
                 </S.Title>
-                <Rating grade={grade} starDimension="32px" />
+                <Rating grade={grade} starDimension="32px" starSpacing="1px" />
                 <S.Overview>
                     <h3>Overview</h3>
                     <p>{overview}</p>
