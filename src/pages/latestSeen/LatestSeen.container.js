@@ -1,4 +1,5 @@
 import withPageLayout from 'hocs/withPageLayout';
-import List from './list';
 
-export default withPageLayout({ title: 'Latest Seen' })(List);
+import Movies from './movies';
+
+export default withPageLayout({ title: 'Latest Seen' })(Movies);

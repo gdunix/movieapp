@@ -5,7 +5,7 @@ import withData from 'hocs/withData';
 import { actions, selectors } from 'store/latestSeen';
 import withInfiniteScroll from 'hocs/withInfiniteScroll';
 
-import List from './List';
+import Movies from './Movies';
 
 const size = 15;
 
@@ -26,4 +26,4 @@ export default compose(
     ),
     withData,
     withInfiniteScroll
-)(List);
+)(Movies);
