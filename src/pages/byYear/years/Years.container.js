@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { actions, selectors } from 'store/byYear';
 import withData from 'hocs/withData';
 
-import Years from './years';
+import Years from './Years';
 
 export default compose(
     connect(

@@ -5,7 +5,7 @@ import withData from 'hocs/withData';
 import { actions, selectors } from 'store/latestSeen';
 import withInfiniteScroll from 'hocs/withInfiniteScroll';
 
-import List from './list';
+import List from './List';
 
 const size = 15;
 
