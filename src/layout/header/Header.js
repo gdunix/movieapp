@@ -11,6 +11,9 @@ const Header = () => (
                 <S.LinkContainer>
                     <S.Link to="/latest-seen">Latest Seen</S.Link>
                 </S.LinkContainer>
+                <S.LinkContainer>
+                    <S.Link to="/by-year">By Year</S.Link>
+                </S.LinkContainer>
             </S.Links>
         </S.Content>    
     </S.Container>
