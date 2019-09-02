@@ -3,7 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
     padding: 10px;
     border-bottom: 1px solid #1d2f4a;
+    display: flex;
+    flex-wrap: wrap;
 `;
+
 
 export const Year = styled.a`
     padding:10px;
