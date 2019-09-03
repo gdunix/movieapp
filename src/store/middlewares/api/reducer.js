@@ -53,7 +53,6 @@ const reducer = (state = {}, action) => {
         ...state,
         [action.payload.key]: {
           loading: false,
-          data: null
         }
       };
     default:
