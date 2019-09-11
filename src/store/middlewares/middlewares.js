@@ -1,7 +1,5 @@
-import thunk from 'redux-thunk';
-
 import api from './api';
 
-const middlewares = [thunk, api];
+const middlewares = [api];
 
 export default middlewares;
