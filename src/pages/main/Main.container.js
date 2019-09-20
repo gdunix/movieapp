@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 
 import { actions, selectors } from 'store/main';
 import withData from 'hocs/withData';
+import withLoader from 'hocs/withLoader';
 
 import Main from './Main';
 
 export default compose(
     connect(
         state => ({
-            movies: selectors.getMain(state)
+            movies: selectors.getMain(state),
+            isLoading: selectors.getRecentMoviesLoading(state)
         }),
         dispatch => ({
             fetchData() {
@@ -17,5 +19,6 @@ export default compose(
             }
         })
     ),
+    withLoader,
     withData
 )(Main);

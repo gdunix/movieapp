@@ -3,7 +3,9 @@ import getOr from 'lodash/fp/getOr';
 
 import paths from './paths';
 
-const getRecentMovies = state => getOr([], [paths.moviesRecentlyWatched, 'data'])(state.apiReducer);
+const getRecentMovies = getOr([], ['apiReducer', paths.moviesRecentlyWatched, 'data']);
+
+const getRecentMoviesLoading = getOr(false, ['apiReducer', paths.moviesRecentlyWatched, 'loading']);
 
 const getMain = createSelector(
     [getRecentMovies],
@@ -16,5 +18,6 @@ const getMain = createSelector(
     })));
 
 export default {
-    getMain
+    getMain,
+    getRecentMoviesLoading
 };
