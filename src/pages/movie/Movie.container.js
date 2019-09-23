@@ -10,7 +10,8 @@ import Movie from './Movie';
 export default compose(
     connect(
         state => ({
-            movie: selectors.getMovie(state)
+            movie: selectors.getMovie(state),
+            isLoading: selectors.getMovieLoading(state),
         }),
         (dispatch, ownProps) => ({
             fetchData(){
@@ -20,7 +21,7 @@ export default compose(
                 }           
             }
         })
-    ),
+    ),  
+    withData,
     withLoader({ hide: true }),
-    withData
 )(Movie);

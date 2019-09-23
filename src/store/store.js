@@ -10,5 +10,5 @@ export default process.env.NODE_ENV === 'production' ? createStore(
     createStore(
         reducer,
         compose(applyMiddleware(...middlewares),
-            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+            window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f
         ));

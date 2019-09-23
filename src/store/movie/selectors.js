@@ -2,8 +2,11 @@ import getOr from 'lodash/fp/getOr';
 
 import paths from './paths';
 
-const getMovie = state => getOr({}, [paths.movie, 'data'])(state.apiReducer);
+const getMovie = getOr({}, ['apiReducer', paths.movie, 'data']);
+
+const getMovieLoading = getOr(false, ['apiReducer', paths.movie, 'loading']);
 
 export default {
-    getMovie
+    getMovie,
+    getMovieLoading
 };
