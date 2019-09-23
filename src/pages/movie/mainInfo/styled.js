@@ -7,6 +7,7 @@ export const Container = styled.div`
     overflow: hidden; 
     margin:0;
     padding;0;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
 `;
 
 export const ViewContainer = styled.div`
@@ -21,6 +22,7 @@ export const ViewContainer = styled.div`
 
 export const ImageContainer = styled.div`
     height: 500px;
+    
 `;
 
 export const StyledImage = styled(Image)`
