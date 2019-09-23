@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import throttle from 'lodash/throttle';
 
-const THROTTLE_DELAY = 500;
+const THROTTLE_DELAY = 1000;
 
 const withInfiniteScroll = WrappedComponent => props => {
 
