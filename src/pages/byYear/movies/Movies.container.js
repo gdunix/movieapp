@@ -21,5 +21,5 @@ export default compose(
         })
     ),
     withData,
-    withLoader
+    withLoader({})
 )(PostersWithRating);

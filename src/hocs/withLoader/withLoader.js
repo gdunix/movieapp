@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import Loader from 'components/loader';
 
-const withLoader = WrappedComponent => props => (
+const withLoader = ({ hide = false }) => WrappedComponent => ({ isLoading, ...props }) => (
     <Fragment>
-        <WrappedComponent {...props} />
+        { !(isLoading && hide) && <WrappedComponent {...props} /> }
         {props.isLoading && <Loader />}
     </Fragment>
 );

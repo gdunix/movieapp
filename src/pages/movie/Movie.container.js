@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { actions, selectors } from 'store/movie';
 import withData from 'hocs/withData';
+import withLoader from 'hocs/withLoader';
 
 import Movie from './Movie';
 
@@ -20,5 +21,6 @@ export default compose(
             }
         })
     ),
+    withLoader({ hide: true }),
     withData
 )(Movie);

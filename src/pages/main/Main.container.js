@@ -19,6 +19,6 @@ export default compose(
             }
         })
     ),
-    withLoader,
+    withLoader({}),
     withData
 )(Main);
