@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 
 import * as S from './styled';
 
@@ -7,9 +8,9 @@ const constructLink = (type, id) => `${type}/${id}`;
 
 const Poster = ({ id, type, name, url }) => (
     <S.Card>
-        <a href={constructLink(type, id)} alt={name}>
+        <Link to={constructLink(type, id)}>
             <S.Img src={url} title={name} />
-        </a>
+        </Link>
     </S.Card>
 );
 
