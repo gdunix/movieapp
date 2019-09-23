@@ -51,9 +51,7 @@ const reducer = (state = {}, action) => {
     case actionTypes.API_CLEAR:
       return {
         ...state,
-        [action.payload.key]: {
-          loading: false,
-        }
+        [action.payload.key]: undefined
       };
     default:
       return state;

@@ -58,8 +58,6 @@ const clear = key => ({
     }  
 });
 
-const apiClear = key => dispatch => dispatch(clear(key));
-
 export default {
     apiGet,
     apiPost,
@@ -69,5 +67,5 @@ export default {
     aggregatedSuccess,
     success,
     error,
-    apiClear
+    clear
 };

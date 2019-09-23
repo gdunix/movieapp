@@ -7,6 +7,10 @@ const fetchMovieById = id =>
         key: paths.movie
     });
 
+const clearMovie = () =>
+    apiActions.clear(paths.movie);
+
 export default {
-    fetchMovieById
+    fetchMovieById,
+    clearMovie
 };
