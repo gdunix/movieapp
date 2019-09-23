@@ -1,39 +1,46 @@
 import styled from 'styled-components';
 import Image from 'components/image'
 
+export const Container = styled.div`
+    background-color: rgba(33,61,91, 1);
+    border-radius: 8px;
+    overflow-y: scroll;
+    margin:0;
+    padding;0;
+`;
+
 export const ViewContainer = styled.div`
-    background-color: rgba(33,61,91, 0.9);
-    margin-top:30px;
-    padding:0;
-    width: 100%;
-    position: relative;
-    z-index: 1;
     color: #ffffff;
     display: flex;
     justify-content: space-between;
-    height:450px;
+    @media (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const ImageContainer = styled.div`
-    width: 30%
+    height: 500px;
 `;
 
 export const StyledImage = styled(Image)`
-    width: 300px;
-    height:450px;
+    height: 500px;
 `;
 
 export const DetailsContainer = styled.div`
-    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-left: 70px;
-    padding-right: 30px;
+    flex-wrap: wrap;
+    background-color: rgba(33,61,91, 0.9);
     font-family: 'Slabo 27px',serif;
-
+    padding: 20px;
     p {
         font-size: 1.1em;
+    }
+
+    @media (max-width: 800px) {
+        width: 300px;
     }
 `;
 
@@ -55,6 +62,8 @@ export const Overview = styled.div`
     margin-bottom: 30px;
     max-height: 150px;
     overflow: auto;
+    word-wrap: break-all;
+    overflow-wrap: break-word;
 `;
 
 export const Tagline = styled.div`

@@ -6,8 +6,9 @@ import * as S from './styled';
 
 const constructURL = url => `https://image.tmdb.org/t/p/w600_and_h900_bestv2${url}`;
 
-const MainInfo = ({ title, imageURL, release_date, grade, overview, director, tagline}) => (
-    <S.ViewContainer>
+const MainInfo = ({ title, imageURL, release_date, grade, overview, director, tagline }) => (
+    <S.Container>
+        <S.ViewContainer>
             <S.ImageContainer>
                 <S.StyledImage alt={title} src={constructURL(imageURL)} />
             </S.ImageContainer>
@@ -30,6 +31,7 @@ const MainInfo = ({ title, imageURL, release_date, grade, overview, director, ta
                 </S.Tagline>
             </S.DetailsContainer>
         </S.ViewContainer>
+    </S.Container>
 );
 
 export default MainInfo;
