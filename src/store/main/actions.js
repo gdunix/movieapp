@@ -7,6 +7,13 @@ const fetchRecentMovies = () =>
         key: paths.moviesRecentlyWatched
     });
 
+const fetchBest = () =>
+    apiActions.apiGet({
+        path: `${paths.moviesBest}/10`,
+        key: paths.moviesBest
+    });
+
 export default {
-    fetchRecentMovies
+    fetchRecentMovies,
+    fetchBest
 };

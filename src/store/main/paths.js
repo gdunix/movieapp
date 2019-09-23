@@ -1,3 +1,4 @@
 export default {
-    moviesRecentlyWatched: 'moviesRecentlyWatched'
+    moviesRecentlyWatched: 'moviesRecentlyWatched',
+    moviesBest: 'moviesBest'
 };

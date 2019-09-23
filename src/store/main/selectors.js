@@ -2,22 +2,29 @@ import { createSelector } from 'reselect';
 import getOr from 'lodash/fp/getOr';
 
 import paths from './paths';
+import * as U from './utils';
 
-const getRecentMovies = getOr([], ['apiReducer', paths.moviesRecentlyWatched, 'data']);
+const getApiRecentMovies = getOr([], ['apiReducer', paths.moviesRecentlyWatched, 'data']);
 
 const getRecentMoviesLoading = getOr(false, ['apiReducer', paths.moviesRecentlyWatched, 'loading']);
 
-const getMain = createSelector(
-    [getRecentMovies],
-    movies => movies.map(({ _id, title, imageURL, grade }) => ({ 
-        id: _id,
-        type: 'movie',
-        name: title,
-        url: `https://image.tmdb.org/t/p/w600_and_h900_bestv2${imageURL}`,
-        grade
-    })));
+const getRecentMovies = createSelector(
+    getApiRecentMovies,
+    U.formatMovies
+);
+
+const getApiBest = getOr([], ['apiReducer', paths.moviesBest, 'data']);
+
+const getBestLoading = getOr(false, ['apiReducer', paths.moviesBest, 'loading']);
+
+const getBest = createSelector(
+    getApiBest,
+    U.formatMovies
+);
 
 export default {
-    getMain,
-    getRecentMoviesLoading
+    getRecentMovies,
+    getRecentMoviesLoading,
+    getBest,
+    getBestLoading
 };

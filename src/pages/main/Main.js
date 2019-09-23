@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react';
 
-import withTitle from 'hocs/withTitle';
-import { PostersWithRating } from 'components/posters';
+import LatestSeen from './latestSeen';
+import Best from './best';
 
-const MovieList = withTitle(PostersWithRating);
-
-const Main = ({movies}) => (
+const Main = () => (
     <Fragment>
-        <MovieList title={'Latest Seen'} items={movies} />
+        <Best />
+        <LatestSeen />
     </Fragment>
 );
 
