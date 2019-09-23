@@ -3,8 +3,8 @@ import Loader from 'components/loader';
 
 const withLoader = ({ hide = false }) => WrappedComponent => ({ isLoading, ...props }) => (
     <Fragment>
-        { !(isLoading && hide) && <WrappedComponent {...props} /> }
-        {props.isLoading && <Loader />}
+        {!(isLoading && hide) && <WrappedComponent {...props} />}
+        {isLoading && <Loader />}
     </Fragment>
 );
 
