@@ -21,7 +21,7 @@ export const Logo = styled.div`
     font-family: 'Lobster Two',cursive;
 `;
 
-export const LogoLink = styled.a`
+export const LogoLink = styled(NavLink)`
     font-size: 34px;
     font-weight: 600;
     color: #fff;

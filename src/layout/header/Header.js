@@ -5,7 +5,7 @@ const Header = () => (
     <S.Container>
         <S.Content>
             <S.Logo>
-                <S.LogoLink href="/">The Movie App</S.LogoLink>
+                <S.LogoLink to="/">The Movie App</S.LogoLink>
             </S.Logo>
             <S.Links>
                 <S.LinkContainer>
