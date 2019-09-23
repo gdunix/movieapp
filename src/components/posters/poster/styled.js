@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import Image from 'components/image';
 
 export const Card = styled.div`
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
+    overflow: hidden;
 `;
 
 export const Img = styled(Image)`
