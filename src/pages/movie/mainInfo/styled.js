@@ -4,7 +4,7 @@ import Image from 'components/image'
 export const Container = styled.div`
     background-color: rgba(33,61,91, 1);
     border-radius: 8px;
-    overflow-y: scroll;
+    overflow: hidden; 
     margin:0;
     padding;0;
 `;
@@ -61,7 +61,7 @@ export const Overview = styled.div`
     margin-top: 15px;
     margin-bottom: 30px;
     max-height: 150px;
-    overflow: auto;
+    overflow-y: scroll;
     word-wrap: break-all;
     overflow-wrap: break-word;
 `;
