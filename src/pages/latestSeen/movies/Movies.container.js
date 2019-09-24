@@ -2,6 +2,7 @@ import { compose } from 'recompose';
 import { connect } from 'react-redux';
 
 import withData from 'hocs/withData';
+import withCleanup from 'hocs/withCleanup';
 import { actions, selectors } from 'store/latestSeen';
 import withInfiniteScroll from 'hocs/withInfiniteScroll';
 
@@ -21,9 +22,13 @@ export default compose(
             },
             getData() {
                 dispatch(actions.fetchMoviesLatestSeenThrottled(size));
+            },
+            cleanup(){
+                dispatch(actions.clear());
             }
         }),
     ),
     withData,
+    withCleanup,
     withInfiniteScroll
 )(Movies);

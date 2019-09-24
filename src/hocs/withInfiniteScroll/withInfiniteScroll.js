@@ -14,19 +14,11 @@ const withInfiniteScroll = WrappedComponent => props => {
         }
     };
 
-    const handleTouchEnd = (e) => {
-        e.preventDefault(); 
-        handleScroll();
-      }
-
     useEffect(() => {
         window.addEventListener('scroll', throttle(onScroll, THROTTLE_DELAY));
-        window.addEventListener('touchend', handleTouchEnd)
 
-        return () => {
-            window.removeEventListener('scroll', onScroll);
-            window.removeEventListener('touchend', handleTouchEnd)
-        }
+        return () => window.removeEventListener('scroll', onScroll);
+        
     }, []);
 
     return <WrappedComponent {...props} />;

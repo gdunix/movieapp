@@ -3,14 +3,14 @@ import getOr from 'lodash/fp/getOr';
 
 import paths from './paths';
 
-const getMoviesLatestSeen = state =>
-    getOr([],[paths.moviesLatestSeen, "data"])(state.apiReducer);
+const getMoviesLatestSeen = 
+    getOr([],['apiReducer', paths.moviesLatestSeen, 'data']);
 
-const getMoviesIsLoading = state =>
-    getOr(false, [paths.moviesLatestSeen, 'loading'])(state.apiReducer);
+const getMoviesIsLoading =
+    getOr(false, ['apiReducer', paths.moviesLatestSeen, 'loading']);
 
-const getCurrentPage = state =>
-    getOr(1, [paths.moviesLatestSeen, 'page'])(state.apiReducer);
+const getCurrentPage =
+    getOr(1, ['apiReducer', paths.moviesLatestSeen, 'page']);
 
 const getMovies = createSelector(
     getMoviesLatestSeen,
