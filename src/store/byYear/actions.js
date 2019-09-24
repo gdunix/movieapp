@@ -1,4 +1,4 @@
-import { actions as apiActions } from 'store/middlewares/api';
+import { actions as apiActions } from 'store/api';
 import paths from './paths';
 
 const fetchReleaseDates = () =>

@@ -4,13 +4,13 @@ import getOr from 'lodash/fp/getOr';
 import paths from './paths';
 
 const getMoviesLatestSeen = 
-    getOr([],['apiReducer', paths.moviesLatestSeen, 'data']);
+    getOr([],['api', paths.moviesLatestSeen, 'data']);
 
 const getMoviesIsLoading =
-    getOr(false, ['apiReducer', paths.moviesLatestSeen, 'loading']);
+    getOr(false, ['api', paths.moviesLatestSeen, 'loading']);
 
 const getCurrentPage =
-    getOr(1, ['apiReducer', paths.moviesLatestSeen, 'page']);
+    getOr(1, ['api', paths.moviesLatestSeen, 'page']);
 
 const getMovies = createSelector(
     getMoviesLatestSeen,
@@ -23,8 +23,11 @@ const getMovies = createSelector(
     }))
 );
 
+const getMoviesEnd = getOr(false, ['api', paths.moviesLatestSeen, 'end']);
+
 export default {
     getMovies,
     getMoviesIsLoading,
-    getCurrentPage
+    getCurrentPage,
+    getMoviesEnd
 };

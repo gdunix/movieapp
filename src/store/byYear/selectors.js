@@ -5,13 +5,13 @@ import getOr from 'lodash/fp/getOr';
 import paths from './paths';
 
 const getReleaseDates = state =>
-    getOr([], [paths.movieReleaseDates, 'data'])(state.apiReducer);
+    getOr([], [paths.movieReleaseDates, 'data'])(state.api);
 
 const getMovieByReleaseDate = state =>
-    getOr([], [paths.moviesByReleaseDate, 'data'])(state.apiReducer);
+    getOr([], [paths.moviesByReleaseDate, 'data'])(state.api);
 
  const getMovieByReleaseDateLoading = state =>
-    getOr(false, [paths.moviesByReleaseDate, 'loading'])(state.apiReducer);
+    getOr(false, [paths.moviesByReleaseDate, 'loading'])(state.api);
 
 const getMovies = createSelector(
     getMovieByReleaseDate,

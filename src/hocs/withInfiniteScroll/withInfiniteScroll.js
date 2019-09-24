@@ -1,25 +1,19 @@
 import React, { useEffect } from 'react';
-import throttle from 'lodash/throttle';
 
-const THROTTLE_DELAY = 1000;
-
-const withInfiniteScroll = WrappedComponent => props => {
-
+const withInfiniteScroll = WrappedComponent => ({ end, getData, ...props }) => {
     const onScroll = () => {
         if (
             window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight
-            && !props.isFetching 
-        ) {
-            props.getData();                      
+            && !end
+        ) {          
+            getData();                      
         }
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', throttle(onScroll, THROTTLE_DELAY));
-
+        window.addEventListener('scroll', onScroll);
         return () => window.removeEventListener('scroll', onScroll);
-        
-    }, []);
+    }, [end]);
 
     return <WrappedComponent {...props} />;
 };

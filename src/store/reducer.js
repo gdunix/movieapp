@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import { reducer as apiReducer } from './middlewares/api';
+import api from './api';
 
 export default combineReducers({
-    apiReducer
+    api
 });

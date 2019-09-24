@@ -1,0 +1,1 @@
+export const constructURL = (endpoint, path, page, size) => `${endpoint}${path}?_page=${page + 1}?_limit=${size}`;

@@ -15,6 +15,7 @@ export default compose(
         state => ({
             items: selectors.getMovies(state),
             isFetching: selectors.getMoviesIsLoading(state),
+            end: selectors.getMoviesEnd(state),
         }),
         dispatch => ({
             fetchData() {

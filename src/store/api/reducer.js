@@ -1,5 +1,4 @@
-import actionTypes from './constants';
-
+import actionTypes from './actionTypes';
 
 const reducer = (state = {}, action) => {
   switch (action.type) {
@@ -8,36 +7,34 @@ const reducer = (state = {}, action) => {
         ...state,
         [action.payload.key]: {
           loading: true,
-          error: ''
         }
       };
-    case actionTypes.API_AGGREGATED_GET:
+    case actionTypes.API_AGGREGATED_REQUEST:
       return {
         ...state,
         [action.payload.key]: {
           loading: true,
           data: state[action.payload.key].data || [],
-          error: '',
-          page: state[action.payload.key].page || 1
+          page: state[action.payload.key].page || 1,
+          end: state[action.payload.key].end || false,
         }
       };
-    case actionTypes.API_RESPONSE:
+    case actionTypes.API_SUCCESS:
       return {
         ...state,
         [action.payload.key]: {
           loading: false,
           data: action.payload.data,
-          error: ''
         }
       };
-    case actionTypes.API_AGGREGATED_RESPONSE:
+    case actionTypes.API_AGGREGATED_SUCCESS:
       return {
         ...state,
         [action.payload.key]: {
           loading: false,
-          data: [ ...state[action.payload.key].data || [], ...action.payload.data],
-          error: '',
-          page: action.payload.data.length ? state[action.payload.key].page + 1 : state[action.payload.key].page
+          data: [...state[action.payload.key].data || [], ...action.payload.data],
+          page: action.payload.data.length ? state[action.payload.key].page + 1 : state[action.payload.key].page,
+          end: !action.payload.data.length > 0
         }
       };
     case actionTypes.API_ERROR:
@@ -45,13 +42,18 @@ const reducer = (state = {}, action) => {
         ...state,
         [action.payload.key]: {
           loading: false,
-          error: action.payload.error
+          error: { 
+            name: action.payload.name,
+            message: action.payload.message,
+          }
         }
       };
     case actionTypes.API_CLEAR:
       return {
         ...state,
-        [action.payload.key]: undefined
+        [action.payload.key]: {
+          loading: false
+        }
       };
     default:
       return state;

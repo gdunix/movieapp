@@ -1,4 +1,4 @@
-import actionTypes from './constants';
+import actionTypes from './actionTypes';
 
 const request = ({path, key, method, body}) => ({
     type: actionTypes.API_REQUEST,
@@ -19,7 +19,7 @@ const apiPut = ({ path, key, body }) => request({ path, key, method:'PUT', body}
 const apiDelete = ({ path, key }) => request({ path, key, method: 'DELETE' });
 
 const aggregatedGet = ({ path, key, size }) => ({
-    type: actionTypes.API_AGGREGATED_GET,
+    type: actionTypes.API_AGGREGATED_REQUEST,
     payload: {
         path,
         key,
@@ -28,7 +28,7 @@ const aggregatedGet = ({ path, key, size }) => ({
 });
 
 const success = (key, data) => ({
-    type: actionTypes.API_RESPONSE,
+    type: actionTypes.API_SUCCESS,
     payload: {
         key,
         data
@@ -36,7 +36,7 @@ const success = (key, data) => ({
 });
 
 const aggregatedSuccess = (key, data) => ({
-    type: actionTypes.API_AGGREGATED_RESPONSE,
+    type: actionTypes.API_AGGREGATED_SUCCESS,
     payload: {
         key,
         data
@@ -44,7 +44,7 @@ const aggregatedSuccess = (key, data) => ({
 });
 
 const error = (key, error) => ({
-    type: actionTypes.API_RESPONSE,
+    type: actionTypes.API_ERROR,
     payload: {
         key,
         error
