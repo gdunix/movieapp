@@ -10,4 +10,5 @@ export const Blockquote = styled.blockquote`
     background: #f9f9f9;
     border-left:8px solid rgba(33,61,91, 1);
     padding: 0.5em 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
 `;
