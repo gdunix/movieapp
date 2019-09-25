@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Blockquote = styled.blockquote`
     font-family: Georgia, serif;
-    font-size: 24px;
+    font-size: 20px;
     font-style: italic;
     line-height: 1.45;
     color: #383838;
