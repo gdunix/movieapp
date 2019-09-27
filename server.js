@@ -7,8 +7,11 @@ const app = express();
 // Since the root/src dir contains our index.html
 app.use(express.static(__dirname + '/dist/'));
 
-app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname +'/dist/index.html'));
+app.get('*.js', (req, res, next) => {
+    req.url = req.url + '.gz';
+    res.set('Content-Encoding', 'gzip');
+    res.set('Content-Type', 'text/javascript');
+    next();
 });
 
 const port = process.env.PORT || 9000
