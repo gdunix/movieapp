@@ -8,7 +8,7 @@ const MainInfo = ({ title, imageURL, release_date, grade, overview, director, ta
     <S.Container>
         <S.ViewContainer>
             <S.ImageContainer>
-                <S.StyledImage alt={title} src={imageURL} />
+                {imageURL && <S.StyledImage alt={title} src={imageURL} />}
             </S.ImageContainer>
             <S.DetailsContainer>
                 <S.Title>

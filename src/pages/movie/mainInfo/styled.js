@@ -21,6 +21,7 @@ export const ViewContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
+    min-width: 350px;
     height: 500px;
     
 `;
