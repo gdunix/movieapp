@@ -10,7 +10,7 @@ module.exports = {
     entry: "./src/App.js",
     output: {
         path: resolve(__dirname, dest),
-        filename: '[name].bundle.js',
+        filename: '[name].[contenthash].js',
         publicPath: '/'
     },
     module: {

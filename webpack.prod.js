@@ -7,8 +7,14 @@ module.exports = merge(common, {
   mode: 'production',
   optimization: {
     splitChunks: {
-      chunks: 'all',
-    },
+			cacheGroups: {
+				commons: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendors',
+					chunks: 'all'
+				}
+			}
+		},
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
