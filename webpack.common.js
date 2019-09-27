@@ -1,6 +1,7 @@
 /* eslint-disable */
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const limit = 100000;
 const dest = 'dist';
@@ -9,7 +10,7 @@ module.exports = {
     entry: "./src/App.js",
     output: {
         path: resolve(__dirname, dest),
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         publicPath: '/'
     },
     module: {
@@ -91,6 +92,7 @@ module.exports = {
         }
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './public/index.html',
             filename: 'index.html',
