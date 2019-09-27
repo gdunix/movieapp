@@ -4,13 +4,11 @@ import Rating from 'components/rating';
 
 import * as S from './styled';
 
-const constructURL = url => `https://image.tmdb.org/t/p/w600_and_h900_bestv2${url}`;
-
 const MainInfo = ({ title, imageURL, release_date, grade, overview, director, tagline }) => (
     <S.Container>
         <S.ViewContainer>
             <S.ImageContainer>
-                <S.StyledImage alt={title} src={constructURL(imageURL)} />
+                <S.StyledImage alt={title} src={imageURL} />
             </S.ImageContainer>
             <S.DetailsContainer>
                 <S.Title>
