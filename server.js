@@ -1,5 +1,6 @@
 /* eslint-disable */
 const express = require('express');
+const path = require('path');
 
 const app = express();
 
@@ -11,6 +12,8 @@ app.get('*.js', (req, res, next) => {
 });
 
 app.use(express.static(__dirname + '/dist/'));
+
+app.get('/*', (_, res) => res.sendFile(path.join(__dirname + '/dist/index.html')));
 
 const port = process.env.PORT || 9000
 app.listen(port);
