@@ -2,6 +2,7 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const limit = 100000;
 const dest = 'dist';
@@ -97,6 +98,15 @@ module.exports = {
             template: './public/index.html',
             filename: 'index.html',
             inject: 'body'
-        })
+        }),
+        new CompressionPlugin({
+            filename: '[path].br[query]',
+            algorithm: 'brotliCompress',
+            test: /\.(js|css|html|svg)$/,
+            compressionOptions: { level: 11 },
+            threshold: 10240,
+            minRatio: 0.8,
+            deleteOriginalAssets: false,
+          }),
     ]
 };
