@@ -1,37 +1,24 @@
-import { compose, withStateHandlers, withHandlers } from 'recompose';
+import { compose } from 'recompose';
 import { connect } from 'react-redux';
 
 import withPageLayout from 'hocs/withPageLayout';
+import withCleanup from 'hocs/withCleanup';
 import { actions, selectors } from 'store/byYear';
 
 import ByYear from './ByYear';
 
 export default compose(
-    withStateHandlers(
-        () => ({ releaseDate: undefined }),
-        {
-          onDateChange: () => year => ({
-            releaseDate: year,
-          })
-        }
-    ),
     connect( 
-        (state, { releaseDate }) => ({
-            selectedYear: releaseDate || selectors.getLatestReleaseDate(state)
+        state => ({
+            latestReleaseDate: selectors.getLatestReleaseDate(state)
         }),
         dispatch => ({
-            fetchDataByDate(year) {
-                dispatch(actions.fetchMoviesByReleaseDate(year));
+            cleanup(){
+                dispatch(actions.clearDates());
+                dispatch(actions.clearMovies());
             }
         })
     ),
-    withHandlers({
-        onChange: ({ onDateChange, fetchDataByDate }) => event => {
-            event.preventDefault();
-            const value = event.target.getAttribute('href');
-            onDateChange(value);
-            fetchDataByDate(value);
-        }
-    }),
+    withCleanup,
     withPageLayout({ title: 'By Year' })
 )(ByYear);

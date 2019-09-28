@@ -13,7 +13,16 @@ const fetchMoviesByReleaseDate = date =>
         key: paths.moviesByReleaseDate
     });
 
+const clearDates = () =>
+    apiActions.clear(paths.movieReleaseDates);
+
+const clearMovies = () =>
+    apiActions.clear(paths.moviesByReleaseDate);
+
+
 export default {
     fetchReleaseDates,
-    fetchMoviesByReleaseDate
+    fetchMoviesByReleaseDate,
+    clearDates,
+    clearMovies
 };

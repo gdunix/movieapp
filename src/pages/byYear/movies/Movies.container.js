@@ -12,10 +12,10 @@ export default compose(
             items: selectors.getMovies(state),
             isLoading: selectors.getMovieByReleaseDateLoading(state)
         }),
-        (dispatch, ownProps) => ({
+        (dispatch, { latestReleaseDate }) => ({
             fetchData() {
-                if(ownProps.selectedYear) {
-                    dispatch(actions.fetchMoviesByReleaseDate(ownProps.selectedYear))
+                if(latestReleaseDate) {
+                    dispatch(actions.fetchMoviesByReleaseDate(latestReleaseDate))
                 }                    
             }
         })

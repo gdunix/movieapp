@@ -20,9 +20,9 @@ const getMovies = createSelector(
     U.formatMovies
 );
 
-const getLatestReleaseDate = compose(
-    head,
-    getReleaseDates
+const getLatestReleaseDate = createSelector(
+    getReleaseDates,
+    head
 );
 
 export default {
