@@ -27,10 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Content = styled.div`
-    box-sizing: border-box;
     padding-top: 50px;
-    width: 100%;
-    min-height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;

@@ -5,7 +5,6 @@ export const Container = styled.nav`
     padding: 15px;
     background-color: #1d2f4a;
     color: #fff;
-    width: 100%;
 `;
 
 export const Content = styled.div`
