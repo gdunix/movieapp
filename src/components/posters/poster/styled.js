@@ -7,12 +7,11 @@ export const Card = styled.div`
     box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
     overflow: hidden;
     width: 170px;
+    background-color: rgba(0, 0, 0, .8);
 `;
 
 export const Img = styled(Image)`
-    width: 170px;
     height: 260px;
-    box-sizing: border-box;
 `;
 
 export const Rating = styled.div`
