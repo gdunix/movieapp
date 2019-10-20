@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Content = styled.div`
-    padding-top: 50px;
+    padding: 50px 0;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;

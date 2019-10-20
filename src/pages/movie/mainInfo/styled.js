@@ -21,7 +21,7 @@ export const ViewContainer = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-    min-width: 350px;
+    min-width: 333px;
     height: 500px;
     
 `;
@@ -35,15 +35,18 @@ export const DetailsContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
+    box-sizing: border-box;
     background-color: rgba(33,61,91, 0.9);
     font-family: 'Slabo 27px',serif;
-    padding: 20px;
+    padding: 20px 30px;
+    width: 100%;
     p {
         font-size: 1.1em;
     }
 
     @media (max-width: 800px) {
         width: 300px;
+        padding: 20px 0;
     }
 `;
 

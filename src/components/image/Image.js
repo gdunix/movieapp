@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState, useCallback, Fragment } from 'react';
 
-const Image = (props) => (
-    <img {...props} />
-  );
+import { SmallLoader } from 'components/loader';
+
+import * as S from './styled';
+
+const Image = props => {
+  const [loaded, setLoaded] = useState(false);
+
+  const onLoad = useCallback(() => setLoaded(true));
+
+  return (
+    <S.Container>
+      {!loaded && <SmallLoader />}
+      <img {...props} onLoad={onLoad} />
+    </S.Container>
+
+  )
+};
 
 export default Image;
