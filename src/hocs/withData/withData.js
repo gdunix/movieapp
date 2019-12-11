@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 
-const withData = WrappedComponent => props => {
+const withData = WrappedComponent => ({ condition = [], ...props }) => {
+    console.log(condition);
     useEffect(() => {
         props.fetchData();
-    }, []);
+    }, condition);
 
     return <WrappedComponent {...props} />
 };

@@ -8,6 +8,7 @@ import Main from 'pages/main';
 const Movie = React.lazy(() => import(/* webpackChunkName: "Movie" */'pages/movie'));
 const LatestSeen = React.lazy(() => import(/* webpackChunkName: "LatestSeen" */'pages/latestSeen'));
 const ByYear = React.lazy(() => import(/* webpackChunkName: "ByYear" */'pages/byYear'));
+const ByDecade = React.lazy(() => import(/* webpackChunkName: "ByDecade" */'pages/byDecade'));
 
 const Routes = () => (
     <Router>
@@ -17,6 +18,7 @@ const Routes = () => (
                 <Route path="/movie/:movieId" render={props => <Movie {...props} />} />
                 <Route exact path="/latest-seen" render={() => <LatestSeen />} />
                 <Route exact path="/by-year" render={() => <ByYear />} />
+                <Route path="/by-decade/:from-:to" render={props => <ByDecade {...props} />} />
             </Suspense>
         </Layout>
     </Router>

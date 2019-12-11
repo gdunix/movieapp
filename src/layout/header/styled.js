@@ -63,3 +63,48 @@ export const Link = styled(NavLink)`
         color: #9d9d9d;
     }
 `;
+
+export const MenuLink = styled(NavLink)`
+    color: #fff;
+    fill: #fff;
+    transition: .2s;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 18px;
+    font-weight: 400;
+
+    &:hover {
+        + div {
+            display: block;
+        }
+    }
+`;
+
+export const Menu = styled.div`
+    display: none;
+   
+    ul {
+        margin: 0;
+        padding: 0;
+        transition: all 0.5s ease;
+        position: absolute;
+        background-color: #1d2f4a;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        list-style-type: none;
+        
+        li {
+            padding: 10px 50px;
+            margin: 0;
+            a {
+                color: #fff;
+            }
+        }
+        
+    }
+    
+    &:hover {
+        display: block;
+        fill: rebeccapurple;
+    }
+`;
