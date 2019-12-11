@@ -15,7 +15,7 @@ const Header = () => (
                     <S.Link to="/by-year">By Year</S.Link>
                 </S.LinkContainer>
                 <S.LinkContainer>
-                    <S.MenuLink to="#">Best of the Decade</S.MenuLink>
+                    <S.MenuLink to="#">Best of by Decade</S.MenuLink>
                     <S.Menu>
                         <ul>
                             <li><S.Link to="/by-decade/2010-2019">2010-2019</S.Link></li>
