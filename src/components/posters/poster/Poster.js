@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import * as S from './styled';
 
-const constructLink = (type, id) => `${type}/${id}`;
+const constructLink = (type, id) => `/${type}/${id}`;
 
 const Poster = ({ id, type, name, url }) => (
     <S.Card>
