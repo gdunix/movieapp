@@ -3,10 +3,10 @@ import React, { Fragment } from 'react';
 import Years from './years';
 import Movies from './movies';
 
-const ByYear = ({ latestReleaseDate }) => (
+const ByYear = ({ selectedYear }) => (
     <Fragment>
-        <Years latestReleaseDate={latestReleaseDate} />
-        {latestReleaseDate && <Movies latestReleaseDate={latestReleaseDate} />}
+        <Years selectedYear={selectedYear} />
+        {selectedYear && <Movies selectedYear={selectedYear} />}
     </Fragment>
 );
 

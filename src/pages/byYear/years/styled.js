@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
     padding: 10px;
@@ -10,7 +11,7 @@ export const Container = styled.div`
 `;
 
 
-export const Year = styled.a`
+export const Year = styled(NavLink)`
     padding:10px;
     font-family: 'Slabo 27px',serif;
     font-size: 2.4em;

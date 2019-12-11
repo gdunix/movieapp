@@ -18,6 +18,7 @@ const Routes = () => (
                 <Route path="/movie/:movieId" render={props => <Movie {...props} />} />
                 <Route exact path="/latest-seen" render={() => <LatestSeen />} />
                 <Route exact path="/by-year" render={() => <ByYear />} />
+                <Route path="/by-year/:year" render={props => <ByYear {...props} />} />
                 <Route path="/by-decade/:from-:to" render={props => <ByDecade {...props} />} />
             </Suspense>
         </Layout>

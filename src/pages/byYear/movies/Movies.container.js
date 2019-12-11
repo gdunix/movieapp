@@ -8,14 +8,15 @@ import { PostersWithRating } from 'components/posters';
 
 export default compose(
     connect(
-        state => ({
+        (state, {selectedYear}) => ({
             items: selectors.getMovies(state),
-            isLoading: selectors.getMovieByReleaseDateLoading(state)
+            isLoading: selectors.getMovieByReleaseDateLoading(state),
+            condition: selectedYear ? [selectedYear] : []
         }),
-        (dispatch, { latestReleaseDate }) => ({
+        (dispatch, { selectedYear }) => ({
             fetchData() {
-                if(latestReleaseDate) {
-                    dispatch(actions.fetchMoviesByReleaseDate(latestReleaseDate))
+                if(selectedYear) {
+                    dispatch(actions.fetchMoviesByReleaseDate(selectedYear))
                 }                    
             }
         })
