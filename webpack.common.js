@@ -101,12 +101,14 @@ module.exports = {
             test: /\.(js)$/,
             minRatio: 0.8,
         }),
-        new BundleAnalyzerPlugin(),
-        new LodashModuleReplacementPlugin({ 
-            currying: true, 
-            collection: true, 
+        new BundleAnalyzerPlugin({ 
+            openAnalyzer: false,
+         }),
+        new LodashModuleReplacementPlugin({
+            currying: true,
+            collection: true,
             paths: true,
             flattening: true,
-         })
+        })
     ]
 };
