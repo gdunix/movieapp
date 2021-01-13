@@ -1,14 +1,8 @@
-import { withProps } from 'recompose';
-
 import Poster, { PosterWithRating } from './poster';
 import PosterList from './Posters';
 
-const Posters = withProps({
-    Poster
-})(PosterList);
+const Posters = PosterList(Poster);
 
-const PostersWithRating = withProps({
-    Poster: PosterWithRating
-})(PosterList);
+const PostersWithRating = PosterList(PosterWithRating);
 
 export { Posters, PostersWithRating };

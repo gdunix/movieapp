@@ -1,4 +1,4 @@
-import { compose } from 'recompose';
+import compose from 'lodash/fp/compose';
 import { connect } from 'react-redux';
 
 import withData from 'hocs/withData';
