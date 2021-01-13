@@ -3,6 +3,8 @@ const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 const limit = 100000;
 const dest = 'dist';
@@ -98,6 +100,13 @@ module.exports = {
             algorithm: 'gzip',
             test: /\.(js)$/,
             minRatio: 0.8,
-        })
+        }),
+        new BundleAnalyzerPlugin(),
+        new LodashModuleReplacementPlugin({ 
+            currying: true, 
+            collection: true, 
+            paths: true,
+            flattening: true,
+         })
     ]
 };
