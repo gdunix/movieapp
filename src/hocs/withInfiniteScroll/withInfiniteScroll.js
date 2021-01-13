@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 const withInfiniteScroll = WrappedComponent => ({ end, getData, ...props }) => {
     const onScroll = () => {

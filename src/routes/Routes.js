@@ -1,14 +1,14 @@
-import React, { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Layout from 'layout';
 import Loader from 'components/loader';
 import Main from 'pages/main';
 
-const Movie = React.lazy(() => import(/* webpackChunkName: "Movie" */'pages/movie'));
-const LatestSeen = React.lazy(() => import(/* webpackChunkName: "LatestSeen" */'pages/latestSeen'));
-const ByYear = React.lazy(() => import(/* webpackChunkName: "ByYear" */'pages/byYear'));
-const ByDecade = React.lazy(() => import(/* webpackChunkName: "ByDecade" */'pages/byDecade'));
+const Movie = lazy(() => import(/* webpackChunkName: "Movie" */'pages/movie'));
+const LatestSeen = lazy(() => import(/* webpackChunkName: "LatestSeen" */'pages/latestSeen'));
+const ByYear = lazy(() => import(/* webpackChunkName: "ByYear" */'pages/byYear'));
+const ByDecade = lazy(() => import(/* webpackChunkName: "ByDecade" */'pages/byDecade'));
 
 const Routes = () => (
     <Router>

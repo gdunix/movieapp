@@ -1,4 +1,4 @@
-import React, { useState, useCallback, Fragment } from 'react';
+import { useState, useCallback } from 'react';
 
 import { SmallLoader } from 'components/loader';
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Rating from 'components/rating';
 
 import * as S from './styled';
