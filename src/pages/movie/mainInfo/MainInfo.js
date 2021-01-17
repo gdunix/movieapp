@@ -20,7 +20,7 @@ const MainInfo = ({ title, imageURL, release_date, grade, overview, director, ta
                 </S.Overview>
                 <div>
                     <h3>Director</h3>
-                    <p>{director}</p>
+                    <p><S.Link to={`/by-director/${director}`}>{director}</S.Link></p>
                 </div>
                 <S.Tagline>
                     <span>{tagline}</span>

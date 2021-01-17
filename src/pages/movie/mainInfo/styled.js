@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
 import Image from 'components/image'
 
 export const Container = styled.div`
@@ -77,4 +78,13 @@ export const Tagline = styled.div`
     line-height: 1.3em;
     font-weight: bold;
     font-style: italic;
+`;
+
+export const Link = styled(NavLink)`
+    color: #fff;
+    &:hover {
+        text-decoration: none;
+        font-weight: bold;
+        font-style: italic;
+    }
 `;

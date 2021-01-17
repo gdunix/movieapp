@@ -1,7 +1,7 @@
 import compose from 'lodash/fp/compose';
 import { connect } from 'react-redux';
 
-import { actions, selectors } from 'store/byDecade';
+import { actions, selectors } from 'store/byDirector';
 import withData from 'hocs/withData';
 import withLoader from 'hocs/withLoader';
 import withCleanup from 'hocs/withCleanup';
@@ -13,17 +13,16 @@ export default compose(
         (state, ownProps) => ({
             items: selectors.getMovies(state),
             isLoading: selectors.getMoviesLoading(state),
-            condition: [ownProps.match.params.from, ownProps.match.params.to],
-            pageTitle: `Best of ${ownProps.match.params.from} - ${ownProps.match.params.to}`
+            pageTitle: `${ownProps.match.params.director}`
         }),
         (dispatch, ownProps) => ({
-            fetchData(){
-                const { from, to } = ownProps.match.params;
-                if(!!from && !!to) {
-                    dispatch(actions.fetchMovies({from, to}));
-                }                    
+            fetchData() {
+                const { director } = ownProps.match.params;
+                if (!!director) {
+                    dispatch(actions.fetchMovies({ director }));
+                }
             },
-            cleanup(){
+            cleanup() {
                 dispatch(actions.clearMovies());
             }
         })
