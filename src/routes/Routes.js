@@ -10,6 +10,7 @@ const LatestSeen = lazy(() => import(/* webpackChunkName: "LatestSeen" */'pages/
 const ByYear = lazy(() => import(/* webpackChunkName: "ByYear" */'pages/byYear'));
 const ByDecade = lazy(() => import(/* webpackChunkName: "ByDecade" */'pages/byDecade'));
 const ByDirector = lazy(() => import(/* webpackChunkName: "ByDecade" */'pages/byDirector'));
+const Directors = lazy(() => import(/* webpackChunkName: "ByDecade" */'pages/directors'));
 
 const Routes = () => (
     <Router>
@@ -22,6 +23,7 @@ const Routes = () => (
                 <Route path="/by-year/:year" render={props => <ByYear {...props} />} />
                 <Route path="/by-decade/:from-:to" render={props => <ByDecade {...props} />} />
                 <Route path="/by-director/:director" render={props => <ByDirector {...props} />} />
+                <Route path="/directors" render={props => <Directors {...props} />} />
             </Suspense>
         </Layout>
     </Router>

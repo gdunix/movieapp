@@ -23,6 +23,9 @@ const Header = () => (
                         </ul>
                     </S.Menu>
                 </S.LinkContainer>
+                <S.LinkContainer>
+                    <S.Link to="/directors">Directors</S.Link>
+                </S.LinkContainer>
             </S.Links>
         </S.Content>
     </S.Container>
