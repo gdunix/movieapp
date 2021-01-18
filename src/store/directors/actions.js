@@ -3,12 +3,12 @@ import paths from './paths';
 
 const fetchDirectors = () =>
     apiActions.apiGet({
-        path: `${paths.getDirectors}`,
-        key: paths.getDirectors
+        path: `${paths.getDirectorsCount}`,
+        key: paths.getDirectorsCount
     });
 
 const clearDirectors = () =>
-    apiActions.clear(paths.getDirectors);
+    apiActions.clear(paths.getDirectorsCount);
 
 
 export default {

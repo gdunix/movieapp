@@ -10,9 +10,12 @@ const Directors = ({ directors }) => {
                 alphabet.map(letter => (
                     <Fragment key={letter}>
                         <S.Letter>{letter}</S.Letter>
-                        {directors.filter(d => d.startsWith(letter))
-                            .map((director, index) =>
-                                (<S.Director key={index} to={`/by-director/${director}`}>{director}</S.Director>)
+                        {directors.filter(d => d._id.startsWith(letter))
+                            .map(({ _id, sum }, index) =>
+                                (<S.Director
+                                    key={index} to={`/by-director/${_id}`}
+                                    count={sum}>{_id}
+                                </S.Director>)
                             )}
                     </Fragment>
                 )
