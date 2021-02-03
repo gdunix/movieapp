@@ -6,6 +6,7 @@ const reducer = (state = {}, action) => {
       return {
         ...state,
         [action.payload.key]: {
+          ...state[action.payload.key] ? state[action.payload.key] : {},
           loading: true,
         }
       };
@@ -42,7 +43,7 @@ const reducer = (state = {}, action) => {
         ...state,
         [action.payload.key]: {
           loading: false,
-          error: { 
+          error: {
             name: action.payload.name,
             message: action.payload.message,
           }

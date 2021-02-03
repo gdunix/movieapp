@@ -1,10 +1,10 @@
 import LatestSeen from './latestSeen';
-import Best from './best';
+import RandomQuotes from './randomQuotes';
 
 const Main = () => (
     <>
-        <Best />
         <LatestSeen />
+        <RandomQuotes />
     </>
 );
 

@@ -1,10 +1,11 @@
+
 import Loader from 'components/loader';
 
 const withLoader = ({ hide = false }) => WrappedComponent => ({ isLoading, ...props }) => (
-    <>
-        {!(isLoading && hide) && <WrappedComponent {...props} />}
+    <div>
         {isLoading && <Loader />}
-    </>
+        {!(isLoading && hide) && <WrappedComponent {...props} />}
+    </div>
 );
 
 export default withLoader;

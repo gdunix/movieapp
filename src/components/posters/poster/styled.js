@@ -8,6 +8,9 @@ export const Card = styled.div`
     overflow: hidden;
     width: 170px;
     background-color: rgba(0, 0, 0, .8);
+    &:hover {
+        box-shadow: 3px 3px 20px rgba(0, 0, 0, .9);
+    }
 `;
 
 export const Img = styled(Image)`
