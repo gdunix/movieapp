@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import * as C from './constants';
 import * as S from './styled';
 
 const RandomQuotes = ({ movies, refetch }) => {
     useEffect(() => {
-        const interval = setInterval(() => { refetch(); }, 1000 * 10);
+        const interval = setInterval(() => { refetch(); }, C.DELAY);
         return () => clearInterval(interval);
     })
     return (
