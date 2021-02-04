@@ -18,7 +18,7 @@ export const Loader = styled.div`
     height: 120px;
     animation: ${rotate} 2s linear infinite;
 
-    position: fixed;
+    position: absolute;
     z-index: 999;
 
     overflow: show;

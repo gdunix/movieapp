@@ -1,11 +1,13 @@
 
 import Loader from 'components/loader';
 
+import * as S from './styled';
+
 const withLoader = ({ hide = false }) => WrappedComponent => ({ isLoading, ...props }) => (
-    <div>
+    <S.Container>
         {isLoading && <Loader />}
         {!(isLoading && hide) && <WrappedComponent {...props} />}
-    </div>
+    </S.Container>
 );
 
 export default withLoader;
