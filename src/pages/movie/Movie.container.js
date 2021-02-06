@@ -22,7 +22,7 @@ export default compose(
                 }           
             },
             cleanup(){
-                dispatch(actions.clearMovie())
+                dispatch(actions.clearMovie());
             }
         })
     ),  

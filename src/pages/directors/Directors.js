@@ -22,7 +22,7 @@ const Directors = ({ directors }) => {
                 )
             }
         </S.Container>
-    )
+    );
 };
 
 export default Directors;

@@ -16,7 +16,7 @@ export default compose(
         (dispatch, { selectedYear }) => ({
             fetchData() {
                 if(selectedYear) {
-                    dispatch(actions.fetchMoviesByReleaseDate(selectedYear))
+                    dispatch(actions.fetchMoviesByReleaseDate(selectedYear));
                 }                    
             }
         })
