@@ -5,8 +5,8 @@ const withInfiniteScroll = WrappedComponent => ({ end, getData, ...props }) => {
         if (
             window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight
             && !end
-        ) {          
-            getData();                      
+        ) {
+            getData();
         }
     };
 

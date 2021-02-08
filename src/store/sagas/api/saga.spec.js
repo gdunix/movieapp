@@ -1,3 +1,4 @@
+/* eslint-disable */
 import 'regenerator-runtime/runtime';
 import { call, put } from 'redux-saga/effects';
 import axios from 'axios';
@@ -24,13 +25,13 @@ describe('api saga', () => {
         return {
             saga,
             expected
-        }
+        };
     };
     it('should handle a succesful call', () => {
         const { saga, expected } = doGet();
         expect(saga.next().value).toEqual(expected);
         expect(saga.next({ data: [] }).value).toEqual(put(actions.success(key, [])));
-    })
+    });
 
     it('should handle a failing call', () => {
         const { saga, expected } = doGet();
@@ -39,5 +40,5 @@ describe('api saga', () => {
             message: '', name: 'Error'
         };
         expect(saga.throw(error).value).toEqual(put(actions.error(key, error)));
-    })
+    });
 });

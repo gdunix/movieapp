@@ -4,7 +4,7 @@ import getOr from 'lodash/fp/getOr';
 import paths from './paths';
 import * as U from '../utils';
 
-const getMoviesLatestSeen = 
+const getMoviesLatestSeen =
     getOr([],['api', paths.moviesLatestSeen, 'data']);
 
 const getMoviesIsLoading =

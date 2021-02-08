@@ -8,8 +8,8 @@ const Layout = ({ children }) => (
         <S.Content>
             <S.InnerContent>
                 {children}
-            </S.InnerContent>           
-        </S.Content>   
+            </S.InnerContent>
+        </S.Content>
     </>
 );
 

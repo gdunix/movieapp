@@ -12,4 +12,4 @@ const PosterWithRating = ({ grade, ...props }) => (
     </>
 );
 
-export default PosterWithRating
+export default PosterWithRating;

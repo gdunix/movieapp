@@ -3,7 +3,7 @@ import paths from './paths';
 
 const fetchMovieById = id =>
     apiActions.apiGet({
-        path:`${paths.movie}/${id}`,
+        path: `${paths.movie}/${id}`,
         key: paths.movie
     });
 

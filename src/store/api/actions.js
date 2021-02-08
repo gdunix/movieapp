@@ -12,9 +12,9 @@ const request = ({path, key, method, body}) => ({
 
 const apiGet = ({ path, key }) => request({ path, key, method: 'GET' });
 
-const apiPost = ({ path, key, body }) => request({ path, key, method:'POST', body});
+const apiPost = ({ path, key, body }) => request({ path, key, method: 'POST', body});
 
-const apiPut = ({ path, key, body }) => request({ path, key, method:'PUT', body});
+const apiPut = ({ path, key, body }) => request({ path, key, method: 'PUT', body});
 
 const apiDelete = ({ path, key }) => request({ path, key, method: 'DELETE' });
 
@@ -32,7 +32,7 @@ const success = (key, data) => ({
     payload: {
         key,
         data
-    }    
+    }
 });
 
 const aggregatedSuccess = (key, data) => ({
@@ -40,7 +40,7 @@ const aggregatedSuccess = (key, data) => ({
     payload: {
         key,
         data
-    }    
+    }
 });
 
 const error = (key, error) => ({
@@ -48,14 +48,14 @@ const error = (key, error) => ({
     payload: {
         key,
         error
-    }   
+    }
 });
 
 const clear = key => ({
     type: actionTypes.API_CLEAR,
     payload: {
         key
-    }  
+    }
 });
 
 export default {

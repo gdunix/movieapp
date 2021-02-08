@@ -2,7 +2,7 @@ import { actions as apiActions } from 'store/api';
 import paths from './paths';
 
 const fetchMoviesLatestSeen = (page, size) =>
-    apiActions.apiGet({ 
+    apiActions.apiGet({
         path: `${paths.moviesLatestSeen}/${page}/${size}`,
         key: paths.moviesLatestSeen
     });

@@ -20,11 +20,11 @@ export function* aggregatedGet(action) {
         const response = yield call(axios.request, config);
         yield put(actions.aggregatedSuccess(key, response.data));
     } catch (error) {
-        console.log(error)
-        yield put(actions.error(key, error))
+        console.log(error);
+        yield put(actions.error(key, error));
     }
 }
 
 export default function* watchAggregatedGet() {
-    yield throttle(DELAY, actionTypes.API_AGGREGATED_REQUEST, aggregatedGet)
+    yield throttle(DELAY, actionTypes.API_AGGREGATED_REQUEST, aggregatedGet);
 }

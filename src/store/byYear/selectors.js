@@ -1,6 +1,5 @@
 import { createSelector } from 'reselect';
 import head from 'lodash/fp/head';
-import compose from 'lodash/fp/compose';
 import getOr from 'lodash/fp/getOr';
 
 import paths from './paths';

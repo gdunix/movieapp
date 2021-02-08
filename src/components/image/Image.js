@@ -15,7 +15,7 @@ const Image = props => {
       <img {...props} onLoad={onLoad} />
     </S.Container>
 
-  )
+  );
 };
 
 export default Image;

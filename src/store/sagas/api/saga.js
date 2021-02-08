@@ -14,14 +14,14 @@ export function* callApi(action) {
         data: body,
     };
 
-    try {      
+    try {
        const response = yield call(axios.request, config);
        yield put(actions.success(key, response.data));
     } catch (error) {
-       yield put(actions.error(key, error))
+       yield put(actions.error(key, error));
     }
  }
 
 export default function* watchCallAPI() {
-  yield takeEvery(actionTypes.API_REQUEST, callApi)
+  yield takeEvery(actionTypes.API_REQUEST, callApi);
 }

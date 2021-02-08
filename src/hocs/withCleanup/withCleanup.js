@@ -5,7 +5,7 @@ const withCleanup = WrappedComponent => props => {
         return () => props.cleanup();
     }, []);
 
-    return <WrappedComponent {...props} />
+    return <WrappedComponent {...props} />;
 };
 
 export default withCleanup;

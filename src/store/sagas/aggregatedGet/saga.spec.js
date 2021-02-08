@@ -1,10 +1,11 @@
+/* eslint-disable */
 import 'regenerator-runtime/runtime';
-import { call, put, select } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 import { actions, constants} from '../../api';
 import { aggregatedGet } from './saga';
-import * as U from './utils'; 
+import * as U from './utils';
 
 describe('aggregatedGet saga', () => {
     const key = 'rides';
@@ -28,13 +29,13 @@ describe('aggregatedGet saga', () => {
         return {
             saga,
             expected
-        }
+        };
     };
     it('should handle a succesful call', () => {
         const { saga, expected } = doGet();
         expect(saga.next(1).value).toEqual(expected);
         expect(saga.next({ data: [] }).value).toEqual(put(actions.aggregateSuccess(key, [])));
-    })
+    });
 
     it('should handle a failing call', () => {
         const { saga, expected } = doGet();
@@ -43,5 +44,5 @@ describe('aggregatedGet saga', () => {
             message: '', name: 'Error'
         };
         expect(saga.throw(error).value).toEqual(put(actions.error(key, error)));
-    })
+    });
 });

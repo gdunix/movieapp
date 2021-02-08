@@ -5,7 +5,7 @@ const withData = WrappedComponent => ({ condition = [], ...props }) => {
         props.fetchData();
     }, condition);
 
-    return <WrappedComponent {...props} />
+    return <WrappedComponent {...props} />;
 };
 
 export default withData;

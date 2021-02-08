@@ -8,6 +8,7 @@ import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
+// eslint-disable-next-line no-undef
 const store = process.env.NODE_ENV === 'production' ? createStore(
     reducer,
     compose(applyMiddleware(sagaMiddleware),
