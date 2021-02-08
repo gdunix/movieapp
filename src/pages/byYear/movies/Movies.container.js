@@ -17,7 +17,7 @@ export default compose(
             fetchData() {
                 if(selectedYear) {
                     dispatch(actions.fetchMoviesByReleaseDate(selectedYear));
-                }                    
+                }
             }
         })
     ),

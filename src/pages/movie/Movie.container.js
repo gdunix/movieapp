@@ -19,13 +19,13 @@ export default compose(
                 const id = ownProps.match.params.movieId;
                 if(id) {
                     dispatch(actions.fetchMovieById(id));
-                }           
+                }
             },
             cleanup(){
                 dispatch(actions.clearMovie());
             }
         })
-    ),  
+    ),
     withData,
     withCleanup,
     withLoader({ hide: true }),

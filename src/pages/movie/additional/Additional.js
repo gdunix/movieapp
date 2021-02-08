@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import * as S from './styled';
 
 const Actor = ({ index, name, character }) => (
@@ -6,7 +7,13 @@ const Actor = ({ index, name, character }) => (
     </li>
 );
 
-const Additional = ({ actors, genres }) => (
+Actor.propTypes = {
+    index: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    character: PropTypes.string.isRequired,
+};
+
+const Additional = ({ actors = [], genres }) => (
     <S.Additional>
         <div>
             <h3>Actors</h3>
@@ -30,5 +37,10 @@ const Additional = ({ actors, genres }) => (
         </div>
     </S.Additional>
 );
+
+Additional.propTypes = {
+    actors: PropTypes.array,
+    genres: PropTypes.array,
+};
 
 export default Additional;

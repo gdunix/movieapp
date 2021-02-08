@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import * as S from './styled';
 
-const Years = ({ years, selectedYear }) => (
+const Years = ({ years = [], selectedYear }) => (
     <S.Container>
         {
             years && years.map((year, index) =>
@@ -9,5 +10,10 @@ const Years = ({ years, selectedYear }) => (
         }
     </S.Container>
 );
+
+Years.propTypes = {
+    years: PropTypes.array,
+    selectedYear: PropTypes.string.isRequired,
+};
 
 export default Years;

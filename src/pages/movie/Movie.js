@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import MainInfo from './mainInfo';
 import Additional from './additional';
 import Quotes from './quotes';
@@ -9,5 +11,9 @@ const Movie = ({ movie }) => (
         <Quotes {...movie} />
     </>
 );
+
+Movie.propTypes = {
+    movie: PropTypes.object.isRequired,
+};
 
 export default Movie;

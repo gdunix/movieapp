@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 import * as S from './styled';
 
-const Directors = ({ directors }) => {
+const Directors = ({ directors = [] }) => {
     const alphabet = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
     return (
         <S.Container>
@@ -23,6 +24,10 @@ const Directors = ({ directors }) => {
             }
         </S.Container>
     );
+};
+
+Directors.propTypes = {
+    directors: PropTypes.array,
 };
 
 export default Directors;

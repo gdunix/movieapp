@@ -18,7 +18,7 @@ export default compose(
         (dispatch, ownProps) => ({
             fetchData() {
                 const { director } = ownProps.match.params;
-                if (!!director) {
+                if (director) {
                     dispatch(actions.fetchMovies({ director }));
                 }
             },

@@ -19,7 +19,7 @@ export default compose(
         }),
         dispatch => ({
             fetchData() {
-                dispatch(actions.fetchMoviesLatestSeen(1, size));         
+                dispatch(actions.fetchMoviesLatestSeen(1, size));
             },
             getData() {
                 dispatch(actions.fetchMoviesLatestSeenThrottled(size));

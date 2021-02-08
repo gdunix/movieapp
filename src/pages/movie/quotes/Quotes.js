@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import * as S from './styled';
 
-const Quotes = ({ quotes }) => (
+const Quotes = ({ quotes=[] }) => (
     <>
         {
             quotes && quotes.map(({text}, index) => (
@@ -11,5 +12,9 @@ const Quotes = ({ quotes }) => (
         }
     </>
 );
+
+Quotes.propTypes = {
+    quotes: PropTypes.array,
+};
 
 export default Quotes;

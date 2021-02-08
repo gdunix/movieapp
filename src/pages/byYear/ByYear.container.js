@@ -9,7 +9,7 @@ import { actions, selectors } from 'store/byYear';
 import ByYear from './ByYear';
 
 export default compose(
-    connect( 
+    connect(
         (state, ownProps) => ({
             selectedYear: get(['match','params','year'])(ownProps) || selectors.getLatestReleaseDate(state)
         }),

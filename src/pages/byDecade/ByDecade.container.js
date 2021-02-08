@@ -21,7 +21,7 @@ export default compose(
                 const { from, to } = ownProps.match.params;
                 if(!!from && !!to) {
                     dispatch(actions.fetchMovies({from, to}));
-                }                    
+                }
             },
             cleanup(){
                 dispatch(actions.clearMovies());

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Rating from 'components/rating';
 
 import * as S from './styled';
@@ -29,5 +30,15 @@ const MainInfo = ({ title, imageURL, release_date, grade, overview, director, ta
         </S.ViewContainer>
     </S.Container>
 );
+
+MainInfo.propTypes = {
+    title: PropTypes.string.isRequired,
+    imageURL: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    grade: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
+    director: PropTypes.string.isRequired,
+    tagline: PropTypes.string.isRequired
+};
 
 export default MainInfo;
