@@ -32,13 +32,13 @@ const MainInfo = ({ title, imageURL, release_date, grade, overview, director, ta
 );
 
 MainInfo.propTypes = {
-    title: PropTypes.string.isRequired,
-    imageURL: PropTypes.string.isRequired,
-    release_date: PropTypes.string.isRequired,
-    grade: PropTypes.string.isRequired,
-    overview: PropTypes.string.isRequired,
-    director: PropTypes.string.isRequired,
-    tagline: PropTypes.string.isRequired
+    title: PropTypes.string,
+    imageURL: PropTypes.string,
+    release_date: PropTypes.number,
+    grade: PropTypes.number,
+    overview: PropTypes.string,
+    director: PropTypes.string,
+    tagline: PropTypes.string
 };
 
 export default MainInfo;

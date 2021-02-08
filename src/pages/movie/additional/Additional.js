@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import * as S from './styled';
 
-const Actor = ({ index, name, character }) => (
+const Actor = ({ index = -1, name, character }) => (
     <li key={index}>
         <span>{name}</span> ({character})
     </li>
 );
 
 Actor.propTypes = {
-    index: PropTypes.number.isRequired,
+    index: PropTypes.number,
     name: PropTypes.string.isRequired,
     character: PropTypes.string.isRequired,
 };

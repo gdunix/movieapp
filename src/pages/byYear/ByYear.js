@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Years from './years';
 import Movies from './movies';
 
-const ByYear = ({ selectedYear }) => (
+const ByYear = ({ selectedYear = -1 }) => (
     <>
         <Years selectedYear={selectedYear} />
         {selectedYear && <Movies selectedYear={selectedYear} />}
@@ -10,7 +10,10 @@ const ByYear = ({ selectedYear }) => (
 );
 
 ByYear.propTypes = {
-    selectedYear: PropTypes.string.isRequired,
+    selectedYear: PropTypes.PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string
+      ]),
 };
 
 export default ByYear;
