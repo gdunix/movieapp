@@ -1,11 +1,18 @@
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-const withData = WrappedComponent => ({ condition = [], ...props }) => {
+// eslint-disable-next-line react/prop-types
+const withData = WrappedComponent => ({ condition = [], fetchData, ...props }) => {
     useEffect(() => {
-        props.fetchData();
+        fetchData();
     }, condition);
 
     return <WrappedComponent {...props} />;
+};
+
+withData.propTypes = {
+    condition: PropTypes.array,
+    fetchData: PropTypes.func.isRequired,
 };
 
 export default withData;

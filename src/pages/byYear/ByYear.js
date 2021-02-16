@@ -5,7 +5,9 @@ import Movies from './movies';
 const ByYear = ({ selectedYear = -1 }) => (
     <>
         <Years selectedYear={selectedYear} />
-        {selectedYear && <Movies selectedYear={selectedYear} />}
+        {selectedYear && (
+            <Movies selectedYear={selectedYear} />
+        )}
     </>
 );
 

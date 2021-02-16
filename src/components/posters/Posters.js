@@ -1,9 +1,11 @@
+import PropTypes from 'prop-types';
 import * as S from './styled';
 
-const Posters = Poster => ({ items }) => (
+// eslint-disable-next-line react/prop-types
+const Posters = Poster => ({ items = [] }) => (
     <S.List>
         {
-            items.map((props, index) => (
+            items && items.map((props, index) => (
                 <S.Item key={index}>
                     <Poster {...props} />
                 </S.Item>
@@ -11,5 +13,9 @@ const Posters = Poster => ({ items }) => (
         }
     </S.List>
 );
+
+Posters.propTypes = {
+    items: PropTypes.array,
+};
 
 export default Posters;
