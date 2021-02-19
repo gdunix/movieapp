@@ -1,26 +1,17 @@
 import PropTypes from 'prop-types';
 import * as S from './styled';
 
-const Actor = ({ index = -1, name, character }) => (
-    <li key={index}>
-        <span>{name}</span> ({character})
-    </li>
-);
-
-Actor.propTypes = {
-    index: PropTypes.number,
-    name: PropTypes.string.isRequired,
-    character: PropTypes.string.isRequired,
-};
-
 const Additional = ({ actors = [], genres }) => (
     <S.Additional>
         <div>
             <h3>Actors</h3>
             <ol>
                 {
-                    actors && actors.map((actor, index) =>
-                        <Actor key={index} {...actor} />
+                    actors && actors.map(({name, character}, index) =>(
+                        <li key={index}>
+                            <span>{name}</span> {character && (<span>({character})</span>)}
+                        </li>
+                        )
                     )
                 }
             </ol>
