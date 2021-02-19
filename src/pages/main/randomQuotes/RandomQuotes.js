@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
+import Quote from './quote';
 import * as C from './constants';
 import * as S from './styled';
 
@@ -9,28 +9,20 @@ const RandomQuotes = ({ movies, refetch }) => {
     useEffect(() => {
         const interval = setInterval(() => { refetch(); }, C.DELAY);
         return () => clearInterval(interval);
-    })
+    });
+    const [hoverItem, setHoverItem] = useState(-1);
     return (
         <S.Container>
-            {movies.map(({ movieId, movie, url, quote }, index) => (
-                <Link
-                    to={`/movie/${movieId}`}
-                    key={index}>
-                    <S.MovieContainer>
-                        <S.ViewContainer>
-                            <S.ImageContainer>
-                                <S.StyledImage src={url} alt={movie} />
-                            </S.ImageContainer>
-                            <S.DetailsContainer>
-                                <S.Quote>{quote}</S.Quote>
-                            </S.DetailsContainer>
-                        </S.ViewContainer>
-                    </S.MovieContainer>
-                </Link>
-            )
-            )}
+            {movies.map((movie, index) => (
+                <Quote
+                    key={index}
+                    index={index}
+                    hoverItem={hoverItem}
+                    setHoverItem={setHoverItem}
+                    {...movie} />
+            ))}
         </S.Container>
-    )
+    );
 };
 
 RandomQuotes.propTypes = {
