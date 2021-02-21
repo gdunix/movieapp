@@ -6,9 +6,12 @@ export const Blockquote = styled.blockquote`
     font-style: italic;
     line-height: 1.45;
     color: #383838;
-    margin: 40px 0;
-    background: #f9f9f9;
-    border-left:8px solid rgba(33,61,91, 1);
-    padding: 0.5em 10px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, .1);
+    background-color: #F0F3F4;
+    border: 1px solid #d02b1f;
+    width: 100%;
+    padding: 16px;
+    margin: 24px 0;
 `;
