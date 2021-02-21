@@ -10,6 +10,9 @@ export const Additional = styled.div`
         flex-wrap: wrap;
     }
     ol li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         font-size: 0.9em;
         width: 140px;
         box-sizing: border-box;
