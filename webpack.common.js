@@ -14,7 +14,7 @@ module.exports = {
         path: resolve(__dirname, dest),
         filename: '[name].[contenthash].js',
         publicPath: '/',
-        hashFunction: "xxhash64"
+        hashFunction: require('metrohash').MetroHash64
     },
     module: {
         rules: [
