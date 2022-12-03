@@ -13,7 +13,8 @@ module.exports = {
     output: {
         path: resolve(__dirname, dest),
         filename: '[name].[contenthash].js',
-        publicPath: '/'
+        publicPath: '/',
+        hashFunction: "xxhash64"
     },
     module: {
         rules: [
