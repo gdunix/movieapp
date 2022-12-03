@@ -106,6 +106,12 @@ module.exports = {
             collection: true,
             paths: true,
             flattening: true,
+        }),
+        new webpack.ids.HashedModuleIdsPlugin({
+            context: __dirname,
+            hashFunction: 'sha256',
+            hashDigest: 'hex',
+            hashDigestLength: 20,
         })
     ]
 };
